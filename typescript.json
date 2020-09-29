@@ -1,0 +1,98 @@
+{
+    "Function expression": {
+      "prefix": "= fu",
+      "body": [
+        "$1 = function $2() {",
+        "$3",
+        "};"
+      ],
+      "description": "Shortcut for function expression"
+    },
+    "Arrow function": {
+      "prefix": "arrow",
+      "body": [
+        "($1) => {$2}"
+      ]
+    },
+    "react-functional-component": {
+      "prefix": "react-fn-component",
+      "body": [
+        "import React, { useCallback } from \"react\";",
+        "import { View, Text } from \"react-native\";",
+        "interface Props {};",
+        "export default function ${1:Name}(props: Props) {",
+        "   return <View><Text>HELLO</Text></View>;",
+        "}"
+      ],
+      "description": "Shortcut for React functional component"
+    },
+    "react-native-component": {
+      "prefix": "react-native-component",
+      "body": [
+        "//@flow",
+        "import React, {Component} from \"react\";",
+        "import {View, Text } from \"react-native\"",
+        "interface Props {};",
+        "export default class ${1:Name} extends Component<Props> {",
+        " render() {",
+        "   return <View><Text>HELLO</Text></View>",
+        "}",
+        "}"
+      ],
+      "description": "Shortcut for React component class"
+    },
+    "redux-thunk": {
+      "prefix": "redux-thunk",
+      "body": [
+        "export function $1(args) { return (dispatch: Function, getState: GetState) => {} }"
+      ],
+      "description": "make a new thunk"
+    },
+    "react-native-redux-container": {
+      "prefix": "react-native-redux-container",
+      "body": [
+        "//@flow",
+        "import React, {Component} from \"react\";",
+        "import {View} from \"react-native\";",
+        "import {connect} from \"react-redux\";\n",
+        "type OwnProps = {};\n",
+        "type StoreProps = {};\n",
+        "type DispatchProps = {};\n",
+        "type Props = OwnProps & StoreProps & DispatchProps;\n",
+        "class ${1:Name} extends Component<Props> {",
+        " render() {",
+        "   return <View>HELLO</View>",
+        "}",
+        "}\n",
+        "const dispatchProps: DispatchProps = {};\n",
+        "export default connect(function mapStateToProps(state, ownProps: OwnProps): StoreProps {return {};})(${1:Name});"
+      ],
+      "description": "Shortcut for React component class"
+    },
+    "Jest describe block": {
+      "prefix": "jest-desc",
+      "body": [
+        "describe('$1', () => {",
+        "   it('$2', () => {",
+        "       expect(true).toBe(true);",
+        "   });",
+        "});"
+      ]
+    },
+    "Jest BDD test block": {
+      "prefix": "jest-it",
+      "body": [
+        "it('${1:does a thing}', () => {",
+        "  expect(true).toBe(true);",
+        "});"
+      ],
+      "description": "Jest BDD test block"
+    },
+    "Jest doMock": {
+      "prefix": "jest-doMock",
+      "body": [
+        "jest.doMock($TM_SELECTED_TEXT, () => ({$1}));"
+      ],
+      "description": "Jest doMock"
+    }
+  }
